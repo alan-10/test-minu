@@ -1,0 +1,44 @@
+version: '3.9'
+services:  
+  
+  app:
+    build: 
+      context: ./api
+    container_name: node_app
+    volumes: 
+      - ./api/src:/usr/app/src
+    ports:
+      - "8001:8001" 
+    depends_on:
+      - mongo
+    networks:
+      - app-network
+
+  mongo:
+    image: mongo:6
+    container_name: mongodbDatabase
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - app-network
+    environment: 
+      MONGO_URI: mongodb://mongo:27017/MyData
+  web:
+    build:
+      context: ./web
+    stdin_open: true
+    volumes:
+    - .:/app/project
+    - .:/app/node_modules
+    ports:
+      - 3000:3000
+
+
+
+networks:
+  app-network:
+
+volumes:
+  mongo-data:
