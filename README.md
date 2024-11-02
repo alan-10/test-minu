@@ -24,3 +24,12 @@
 ```
 
 3 Acesse no seu navegador o link http://localhost:3000/
+
+### Rodar os testes
+ 1.  Neseccário ter instado o node no seu computador
+ 2. dentro do projeto temos duas aplicações backend (pasta api) e frontend (pasta web)
+ navegue ate a pasta desejada e execute o comando npm run test
+
+
+
+### Vidio de overview da aplicação 
