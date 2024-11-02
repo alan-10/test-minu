@@ -1,14 +1,12 @@
 
 import { screen, fireEvent, waitFor } from '@testing-library/react';
-// import { api } from '../api';
 import { render } from './test-utils'
 import { FormDialogCreateProduct } from '../components/CreateProductDialog';
 import '@testing-library/jest-dom'
 import { api } from '../api/';
 import { FormDialogUpdateProduct } from '../components/UpdateProductDialog';
-import { MenuAppBar } from '../components/Header';
-// import { MenuAppBar } from '../components/Header'
-// Mock da API
+
+
 jest.mock('../api');
 
 describe('FormDialogCreateProduct Component', () => {
@@ -82,23 +80,6 @@ describe('FormDialogCreateProduct Component', () => {
       expect(mockLoadPage).toHaveBeenCalled();
     });
   });
-
-
-
-
-  it("should render the dialog with all fields and buttons [componet: Header]", () => {
-  render(
-      <MenuAppBar />
-    )
-
-    // const buttonLogout  = getByText("asdfasf")
-
-    // fireEvent.click(buttonLogout);
-    // expect(screen.getByLabelText(/sair/i)).toBeInTheDocument();
-
-
-  });
-
 
 
 
